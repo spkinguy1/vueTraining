@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./font/font.css">
+</head>
+<body>
+    <!--
+         app.js barname asli hast ke ba Vue , mount mishe rooye #app 
+    -->
+
+
+
+
+
+    <!-- entry point! -->
+    <div id="app" v-cloak> 
+        <table id="wrapper1">
+            <tr>
+                <td>
+                    <label for="first">نام</label>
+                    <input type="text" name="firstNameValue" id="first" v-model="firstName"> 
+                </td>
+                <td>
+                    <label for="last">نام خانوادگی</label>
+                    <input type="text" name="lastNameValue" id="last" v-model="lastName"> 
+                </td>
+            </tr>
+
+        </table>
+        <p>
+            {{
+                `آقای/خانم : ${firstName} ${lastName}`
+            }}
+        </p>
+    </div>
+
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="app.js"></script>
+</body>
+</html>
