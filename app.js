@@ -4,8 +4,8 @@
 Vue.createApp({
     data() {
         return{
-            firstName : "  ",
-            lastName : "  "
+            firstName : "",
+            lastName : ""
         }
     },
     methods: {
