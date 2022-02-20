@@ -52,7 +52,7 @@ let vm = Vue.createApp({
             let item = document.getElementById(id.value)
 
             item.remove(item)
-            
+    
         }
     }
 }).mount('#app')
