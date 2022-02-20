@@ -25,15 +25,33 @@ let vm = Vue.createApp({
                 message.style.color = "rgb(90, 90, 90)"
             }     
         },
+        checkboxConvert() {
+            let checkbox = document.getElementById("ezdevaj")
+
+            if (checkbox.checked == true) {        
+                return "\u2714"   
+            } else {
+                return "\u2716"
+            }     
+        },
         register() {
             let edu = document.getElementById("edu")
             let table = document.getElementById("wrapper2")
-            table.innerHTML += `        <tr>
-            <td>${vm.buffer++}</td>
-            <td>${vm.firstName +" " +vm.lastName}</td>
-            <td>${edu.value}</td>
-            <td>وضعیت تأهل</td>
-        </tr>`
+            
+            table.innerHTML += `
+            <tr id="${vm.buffer}" class="addElement">
+                <td>${vm.buffer++}</td>
+                <td>${vm.firstName +" " +vm.lastName}</td>
+                <td>${edu.value}</td>
+                <td>${vm.checkboxConvert()}</td>
+            </tr>`
+            
+        },
+        deleteItem() {
+            let id = document.getElementById("deleteField")
+            let item = document.getElementById(id.value)
+
+            item.remove(item)
             
         }
     }
