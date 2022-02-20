@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="./font/font.css">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/font.css">
 </head>
 <body>
     <!--
@@ -18,26 +18,63 @@
 
 
     <!-- entry point! -->
-    <div id="app" v-cloak> 
-        <table id="wrapper1">
-            <tr>
-                <td>
-                    <label for="first">نام</label>
-                    <input type="text" name="firstNameValue" id="first" v-model="firstName"> 
-                </td>
-                <td>
-                    <label for="last">نام خانوادگی</label>
-                    <input type="text" name="lastNameValue" id="last" v-model="lastName"> 
-                </td>
-            </tr>
+<div id="app" v-cloak> 
+    <table id="wrapper1">
+        <tr>
+            <td>
+                <label for="first">نام</label>
+                <input type="text" name="firstNameValue" id="first" v-model="firstName"> 
+            </td>
+            <td>
+                <label for="last">نام خانوادگی</label>
+                <input type="text" name="lastNameValue" id="last" v-model="lastName"> 
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="edu"> مدرک تحصیلی</label>
+                <select name="education" id="edu">
+                    <option value="cicle">سیکل</option>
+                    <option value="diplom">دیپلم</option>
+                    <option value="lisans">لیسانس</option>
+                    <option value="foghLisans">فوق لیسانس</option>
+                    <option value="doctora">دکترا</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="ezdevaj">وضعیت تأهل</label>
+                <input @click="checkboxHandler" type="checkbox" id="ezdevaj">
+                <span id="ezdevajMessage"></span>
+            </td>   
+        </tr>
 
-        </table>
-        <p>
-            {{
-                `آقای/خانم : ${firstName} ${lastName}`
-            }}
-        </p>
-    </div>
+    </table>
+    <p>
+        {{
+            `آقای/خانم : ${firstName} ${lastName}`
+        }}
+    </p>
+
+    <button id="register" @click="register">ثبت</button>
+
+    <table id="wrapper2">
+        <tr>
+            <td>ردیف</td>
+            <td>نام و نام خانوادگی</td>
+            <td>مدرک تحصیلی</td>
+            <td>وضعیت تأهل</td>
+        </tr>
+        <tr>
+            <td>x</td>
+            <td>نام و نام خانوادگی</td>
+            <td>مدرک تحصیلی</td>
+            <td>وضعیت تأهل</td>
+        </tr>
+    </table>
+</div>
+
 
     <script src="https://unpkg.com/vue@3"></script>
     <script src="app.js"></script>

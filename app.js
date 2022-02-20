@@ -1,16 +1,40 @@
 // har Vue app faghat mitoone roo yek htmlElement mount she
 // too data() , data save mikonim ke be onvan expresion estefade mishe be in shekl {{}}
 // va too methods , function haro negah midarim :)
-Vue.createApp({
+let vm = Vue.createApp({
     data() {
         return{
             firstName : "",
-            lastName : ""
+            lastName : "",
+            buffer:1,
         }
     },
     methods: {
         returnName() {
             return `${this.firstName}`
+        },
+        checkboxHandler() {
+            let checkbox = document.getElementById("ezdevaj")
+            let message = document.getElementById("ezdevajMessage")
+
+            if (checkbox.checked == true) {
+                message.innerText = "متأهل"
+                message.style.color = "rgb(0, 87, 22)"               
+            } else {
+                message.innerText = "مجرد" 
+                message.style.color = "rgb(90, 90, 90)"
+            }     
+        },
+        register() {
+            let edu = document.getElementById("edu")
+            let table = document.getElementById("wrapper2")
+            table.innerHTML += `        <tr>
+            <td>${vm.buffer++}</td>
+            <td>${vm.firstName +" " +vm.lastName}</td>
+            <td>${edu.value}</td>
+            <td>وضعیت تأهل</td>
+        </tr>`
+            
         }
     }
 }).mount('#app')
