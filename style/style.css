@@ -79,7 +79,7 @@ input[type=text]:focus {
 }
 #wrapper2 {
 
-    min-width: 700px;
+    min-width: 800px;
     margin: 0 auto;
     margin-top: -10px;
     text-align: center;
@@ -116,6 +116,8 @@ input[type=text]:focus {
     height: 20px;
     margin-top: 10px;
 }
-
+.deletebutton , sample{
+    width: 20px;
+}
 
 

@@ -10,9 +10,6 @@ let vm = Vue.createApp({
         }
     },
     methods: {
-        returnName() {
-            return `${this.firstName}`
-        },
         checkboxHandler() {
             let checkbox = document.getElementById("ezdevaj")
             let message = document.getElementById("ezdevajMessage")
@@ -34,6 +31,9 @@ let vm = Vue.createApp({
                 return "\u2716"
             }     
         },
+        deleteRow(e) {
+            
+        },
         register() {
             let edu = document.getElementById("edu")
             let table = document.getElementById("wrapper2")
@@ -44,15 +44,29 @@ let vm = Vue.createApp({
                 <td>${vm.firstName +" " +vm.lastName}</td>
                 <td>${edu.value}</td>
                 <td>${vm.checkboxConvert()}</td>
+                <td><button class="deletebutton">x</button></td>
             </tr>`
-            
-        },
-        deleteItem() {
-            let id = document.getElementById("deleteField")
-            let item = document.getElementById(id.value)
+            let btns = document.querySelectorAll(`.deletebutton`)
 
-            item.remove(item)
-    
-        }
+            for (let btn of btns) {
+                btn.addEventListener('click', (e) =>{
+                    e.target.parentElement.parentElement.remove()
+                })
+            }  
+        },
+        deleteItem(e) {
+            let deleteField = document.getElementById("deleteField")
+            if (deleteField.value != "") {
+                let item = document.getElementById(deleteField.value)
+                if (item != null || "" || undefined) {
+                
+                    item.remove(item)
+                }
+            }
+        },
+
     }
 }).mount('#app')
+
+
+

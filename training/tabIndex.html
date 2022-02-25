@@ -1,0 +1,52 @@
+
+<!-- training about use Enter beside Tab for jump next field -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    *{
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+    input {
+      border: 2px solid black;
+    }
+  </style>
+
+</head>
+<body>
+
+  <input tabindex ="1" id="i1" type="text" placeholder="salam">
+  <input tabindex ="3" id="i2" type="text">
+  <input tabindex ="2" id="i3" type="text">
+
+
+  <script>
+
+    // use Enter for jump next input but i couldn't implement that in
+    // the app.html
+
+    
+    let inputs = document.querySelectorAll('input')
+    for (let input of inputs) {
+
+      input.addEventListener('keydown' ,(e) => {
+
+        if (e.key == 'Enter') {
+          input.nextElementSibling.focus()
+        }
+      })
+    }
+    console.log(inputs) 
+  </script>
+</body>
+</html>
