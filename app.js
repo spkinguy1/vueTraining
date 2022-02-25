@@ -31,9 +31,6 @@ let vm = Vue.createApp({
                 return "\u2716"
             }     
         },
-        deleteRow(e) {
-            
-        },
         register() {
             let edu = document.getElementById("edu")
             let table = document.getElementById("wrapper2")
@@ -51,6 +48,7 @@ let vm = Vue.createApp({
             for (let btn of btns) {
                 btn.addEventListener('click', (e) =>{
                     e.target.parentElement.parentElement.remove()
+                    vm.buffer--
                 })
             }  
         },
