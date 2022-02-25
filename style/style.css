@@ -116,8 +116,8 @@ input[type=text]:focus {
     height: 20px;
     margin-top: 10px;
 }
-.deletebutton , sample{
-    width: 20px;
+.deletebutton , #sample{
+    width: 40px;
 }
 
 

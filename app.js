@@ -44,7 +44,7 @@ let vm = Vue.createApp({
                 <td>${vm.firstName +" " +vm.lastName}</td>
                 <td>${edu.value}</td>
                 <td>${vm.checkboxConvert()}</td>
-                <td><button class="deletebutton">x</button></td>
+                <td><button class="deletebutton">حذف</button></td>
             </tr>`
             let btns = document.querySelectorAll(`.deletebutton`)
 
