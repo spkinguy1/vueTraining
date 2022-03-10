@@ -4,4 +4,4 @@ training vuejs step , step
 this is not Vue yet ..
 
 simply clone the repo and 
-*execute app.html*
+<h1>*execute app.html*</h1>
