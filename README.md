@@ -1,7 +1,7 @@
 # vueTraining
-training vuejs step , step
+i want to do training vuejs step , step
 
 this is not Vue yet ..
 
 simply clone the repo and :
-<h5>*execute app.html*</h5>
+<h3>*execute app.html*</h3>
